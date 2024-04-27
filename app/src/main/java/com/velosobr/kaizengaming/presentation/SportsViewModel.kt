@@ -1,5 +1,6 @@
 package com.velosobr.kaizengaming.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.velosobr.kaizengaming.domain.model.Sport
@@ -11,18 +12,22 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SportsViewModel @Inject constructor(private val getSportsUseCase: GetSportsUseCase) : ViewModel() {
+class SportsViewModel @Inject constructor(
+    private val getSportsUseCase: GetSportsUseCase
+) :
+    ViewModel() {
 
-    private val _sports = MutableStateFlow<List<Sport>>(emptyList())
-    val sports: StateFlow<List<Sport>> = _sports
+    private val _sports = MutableStateFlow<Result<List<Sport>>>(Result.success(emptyList()))
+    val sports: StateFlow<Result<List<Sport>>> = _sports
 
     init {
         fetchSports()
     }
 
-    private fun fetchSports() {
+     private fun fetchSports() {
         viewModelScope.launch {
             val sports = getSportsUseCase()
+            Log.d("SportsViewModel", "Fetched sports: $sports")
             _sports.value = sports
         }
     }

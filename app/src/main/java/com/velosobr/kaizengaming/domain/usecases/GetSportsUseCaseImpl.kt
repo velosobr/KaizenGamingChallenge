@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetSportsUseCaseImpl @Inject constructor(
     private val sportsRepository: SportsRepository
 ) : GetSportsUseCase {
-    override suspend fun invoke(): List<Sport> {
+    override suspend fun invoke(): Result<List<Sport>>{
         return sportsRepository.getSports()
     }
 }
