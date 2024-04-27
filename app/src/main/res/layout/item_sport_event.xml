@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Countdown"
+        app:layout_constraintEnd_toEndOf="@+id/tvCompetitorFirst"
+        app:layout_constraintStart_toStartOf="@+id/tvCompetitorFirst"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favorite_border"
+        app:layout_constraintTop_toBottomOf="@+id/tvCountdown"
+        app:layout_constraintEnd_toEndOf="@+id/tvCompetitorFirst"
+        app:layout_constraintStart_toStartOf="@+id/tvCompetitorFirst"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/tvCompetitorFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Competitor 1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFavorite" />
+
+    <TextView
+        android:id="@+id/tvVersus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="vs"
+        app:layout_constraintEnd_toEndOf="@+id/tvCompetitorSecond"
+        app:layout_constraintStart_toStartOf="@+id/tvCompetitorSecond"
+        app:layout_constraintTop_toBottomOf="@id/tvCompetitorFirst" />
+
+    <TextView
+        android:id="@+id/tvCompetitorSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Competitor 2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvVersus" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
