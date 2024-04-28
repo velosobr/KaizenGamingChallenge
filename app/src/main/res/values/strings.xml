@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Kaizen Gaming</string>
+    <string name="countdown">Countdown</string>
+    <string name="vs">vs</string>
 </resources>
