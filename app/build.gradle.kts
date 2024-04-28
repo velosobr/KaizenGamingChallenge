@@ -25,7 +25,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "BASE_URL", "\"https://618d3aa7fe09aa001744060a.mockapi.io/api/\"")
+        buildConfigField(
+            "String",
+            "BASE_URL",
+            "\"https://618d3aa7fe09aa001744060a.mockapi.io/api/\""
+        )
     }
 
     buildTypes {
@@ -89,6 +93,8 @@ dependencies {
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+    testImplementation ("androidx.arch.core:core-testing:2.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("com.google.dagger:hilt-android-testing:$hiltVersion")
     kaptAndroidTest("com.google.dagger:hilt-compiler:$hiltVersion")
