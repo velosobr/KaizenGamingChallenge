@@ -11,8 +11,6 @@ in real-time, decrementing as time passes to accurately reflect the time remaini
 
 ## Architecture
 
-## Architecture
-
 This project is being modularized and aims to implement the Clean Architecture approach. The Clean Architecture separates the software into layers, each with its own distinct responsibility, making the system easier to understand, develop, test, and become more resilient to future changes.
 
 The project is divided into the following layers:
