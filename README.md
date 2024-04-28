@@ -2,8 +2,7 @@
 
 ## App Demo
 
-![App Demo](Screen_Recording_20240428_195214_Kaizen-Gaming.gif)
-
+<img src="Screen_Recording_20240428_195214_Kaizen-Gaming.gif" width="50%" height="50%" />
 ## Introduction
 
 This project is an Android application developed primarily in Kotlin. It is designed to fetch and display a list of sports events from an API endpoint. 
