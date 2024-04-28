@@ -5,6 +5,9 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="mapFromSportResponse_returns_correct_Sport_when_given_SportResponse()">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

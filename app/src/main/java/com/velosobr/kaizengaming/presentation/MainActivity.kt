@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             binding.tvMessage.visibility = View.GONE
             buttonRetry.visibility = View.GONE
 
-            sportsAdapter = SportAdapter(state.sports)
+            sportsAdapter = SportAdapter(state.sports, this@MainActivity)
 
             with(rvSports){
                 setHasFixedSize(true)

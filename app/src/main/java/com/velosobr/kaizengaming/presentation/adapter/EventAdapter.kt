@@ -1,7 +1,6 @@
 package com.velosobr.kaizengaming.presentation.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,24 +14,18 @@ import java.util.Timer
 import kotlin.concurrent.timerTask
 
 class EventAdapter(
-    private val events: List<Event>,
+    private var events: List<Event>,
     context: Context
-) :
-    RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
-    private val sharedPreferences = context.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
-    private var displayedEvents = events.toMutableList()
-    fun filterFavorites(showFavorites: Boolean) {
-        val favorites = sharedPreferences.getStringSet("favorites", mutableSetOf()) ?: mutableSetOf()
-        Log.d("EventAdapter", "Favorites from SharedPreferences: $favorites")
-        displayedEvents = if (showFavorites) {
-            events.filter { favorites.contains(it.i) }.toMutableList()
-        } else {
-            events.toMutableList()
-        }
-        Log.d("EventAdapter", "Displayed events after filter: $displayedEvents")
+    private val sharedPreferences =
+        context.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+
+    fun updateEvents(newEvents: List<Event>) {
+        events = newEvents.toMutableList()
         notifyDataSetChanged()
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_sport_event, parent, false)
@@ -59,29 +52,34 @@ class EventAdapter(
             binding.tvCompetitorFirst.text = event.competitors[0]
             binding.tvCompetitorSecond.text = event.competitors[1]
 
-            var countdownTime = event.tt.toLong()
-            timer?.cancel() // Cancel any existing timer
-            timer = Timer().apply {
-                schedule(timerTask {
-                    val countdown = TimeUtils.convertUnixToTime(countdownTime)
-                    binding.tvCountdown.post {
-                        binding.tvCountdown.text = countdown
-                    }
-                    countdownTime--
-                }, 0, 1000)
-            }
+            scheduleCountdown(event.tt.toLong())
+
             binding.imgFavorite.setOnClickListener {
                 event.isFavorite = !event.isFavorite
                 updateFavorites(event)
                 notifyDataSetChanged()
             }
 
+            updateFavoriteIcon(event)
+        }
+
+        private fun scheduleCountdown(countdownTime: Long) {
+            timer?.cancel()
+            timer = Timer().apply {
+                schedule(timerTask {
+                    val countdown = TimeUtils.convertUnixToTime(countdownTime)
+                    binding.tvCountdown.post {
+                        binding.tvCountdown.text = countdown
+                    }
+                }, 0, 1000)
+            }
+        }
+
+        private fun updateFavoriteIcon(event: Event) {
             if (event.isFavorite) {
                 binding.imgFavorite.setImageResource(R.drawable.ic_favorite_filled)
-                Log.d("EventAdapter", "Event ${event.i} is marked as favorite")
             } else {
                 binding.imgFavorite.setImageResource(R.drawable.ic_favorite_border)
-                Log.d("EventAdapter", "Event ${event.i} is not marked as favorite")
             }
         }
     }
@@ -91,16 +89,13 @@ class EventAdapter(
             ?: mutableSetOf()
         if (event.isFavorite) {
             favorites.add(event.i)
-            Log.d("EventAdapter", "Event ${event.i} added to favorites")
         } else {
             favorites.remove(event.i)
-            Log.d("EventAdapter", "Event ${event.i} removed from favorites")
         }
         with(sharedPreferences.edit()) {
             putStringSet("favorites", favorites)
             apply()
         }
-        Log.d("EventAdapter", "Favorites after update: $favorites")
 
         val index = events.indexOf(event)
         if (index != -1) {

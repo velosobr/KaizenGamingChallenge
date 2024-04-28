@@ -1,5 +1,9 @@
 # KAIZEN GAMING - ANDROID INTERVIEW PROJECT
 
+## App Demo
+
+![App Demo](Screen_Recording_20240428_195214_Kaizen-Gaming.gif)
+
 ## Introduction
 
 This project is an Android application developed primarily in Kotlin. It is designed to fetch and display a list of sports events from an API endpoint. 
@@ -43,7 +47,7 @@ Please note that you need to have the Android SDK and Android SDK Tools installe
 `OK` The app should display the list of events in a scrollable list that groups the sport events
 by type, displays the competitors, the countdown timer that indicates when the event is
 scheduled to start and a favorite button.<br>
-`NOT WORKING` The app should allow users to filter the events per sport based on if they are added as
+`OK` The app should allow users to filter the events per sport based on if they are added as
 favorites or not. The filter should be accessible via a toggle button at the header of each
 sport.<br>
 `OK` The app should update the countdown timer in real-time, i.e., the timer should decrement
@@ -56,7 +60,7 @@ as well as a physical device and should work on SDK21 and above.<br>
 
 ## Nice to have 👍
 `OK`  The app could store the favorite events in session or a local database.<br>
-● The app could include unit tests to ensure that the filtering and countdown timer
+`OK` The app could include unit tests to ensure that the filtering and countdown timer
 functionality work correctly.<br>
 ● The app could include UI tests to ensure that the app's UI looks and behaves correctly
 on different devices and screen sizes.<br>
@@ -69,7 +73,7 @@ mentioning.<br>
 [x] Fetch and display a list of sports events from an API endpoint.<br>
 [x] Group events by sport type and display them in a scrollable list.<br>
 [x] Display each event entry with the competitors, a countdown timer indicating when the event is scheduled to start, and a favorite button.<br>
-[ ] Allow users to filter the events per sport based on whether they are marked as favorites. This filter is accessible via a toggle button at the header of each sport.<br>
+[x] Allow users to filter the events per sport based on whether they are marked as favorites. This filter is accessible via a toggle button at the header of each sport.<br>
 [x] Real-time countdown timer updates, decrementing as time passes to accurately reflect the time remaining until the event starts.<br>
 [x] Persist the favorite status of each event across app launches using Android's SharedPreferences.<br>
 [x] Allow users to collapse and expand events per sport.<br>
@@ -82,7 +86,7 @@ mentioning.<br>
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENCE) file for details.
 
 ## Contact Information
 
