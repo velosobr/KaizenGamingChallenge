@@ -80,12 +80,11 @@ mentioning.<br>
 
 - Implement a more robust error handling mechanism to handle network errors, timeouts, and other exceptions.
 - Add a search feature to allow users to search for specific events.
-- 
+
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-## Contact Information
 
 ## Contact Information
 
