@@ -28,7 +28,7 @@ The project also makes use of Android's SharedPreferences for persisting the fav
 1. Ensure you have the latest version of Android Studio installed. You can download it from [here](https://developer.android.com/studio).
 
 2. Clone the project from GitHub. Open your terminal and run the following command:
-git clone https://github.com/velosobr/KaizenGamingChallenge.git
+`git clone https://github.com/velosobr/KaizenGamingChallenge.git`
 
 3. Open the project. Launch Android Studio, click on `Open an existing Android Studio project` and select the project directory.
 
