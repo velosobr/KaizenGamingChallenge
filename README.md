@@ -2,10 +2,8 @@
 
 ## Introduction
 
-This project is an Android application developed primarily in Kotlin, with some parts in Java. 
-It is designed to fetch and display a list of sports events from an API endpoint. 
-The events are grouped by sport type and displayed in a scrollable list. Each event entry shows the competitors, 
-a countdown timer indicating when the event is scheduled to start, and a favorite button.
+This project is an Android application developed primarily in Kotlin. It is designed to fetch and display a list of sports events from an API endpoint. 
+The events are grouped by sport type and displayed in a scrollable list. Each event entry shows the competitors, a countdown timer indicating when the event is scheduled to start, and a favorite button.
 
 Users can filter the events per sport based on whether they are marked as favorites. 
 This filter is accessible via a toggle button at the header of each sport. The countdown timer updates 
