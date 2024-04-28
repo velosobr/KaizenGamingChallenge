@@ -2,4 +2,12 @@
     <string name="app_name">Kaizen Gaming</string>
     <string name="countdown">Countdown</string>
     <string name="vs">vs</string>
+    <string name="errorMessage">Nenhum evento para exibir</string>
+    <string name="something_went_wrong">Uh-oh! Something went wrong while fetching the events. 😓</string>
+    <string name="no_event_to_display">Oops! Looks like there\'s no event to display. 🙁</string>
+    <string name="error_loading_data_items">Error when trying to fetch Data Items</string>
+    <string name="common_try_again">Try Again\n</string>
+    <string name="sport_name">Sport Name</string>
+    <string name="show_favorites">Show Favorites</string>
+    <string name="show_all">Show All</string>
 </resources>

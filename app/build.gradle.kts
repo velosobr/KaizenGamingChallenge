@@ -59,6 +59,9 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-compiler:2.51.1")
 
+    //Shimmer
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
     // OkHttp
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")

@@ -52,9 +52,9 @@ favorites or not. The filter should be accessible via a toggle button at the hea
 sport.<br>
 `OK` The app should update the countdown timer in real-time, i.e., the timer should decrement
 as time passes and should accurately reflect the time remaining until the event starts.<br>
-● The app should display an appropriate message if there are no events to display or if
+`OK` The app should display an appropriate message if there are no events to display or if
 there is an error fetching the events from the API endpoint.<br>
-● The app should allow user to be able to collapse and expand events per sport.<br>
+`OK` The app should allow user to be able to collapse and expand events per sport.<br>
 `OK` Expected deliverable is an Android project that can be built and run both in an emulator
 as well as a physical device and should work on SDK21 and above.<br>
 
@@ -76,6 +76,8 @@ mentioning.<br>
 [ ] Allow users to filter the events per sport based on whether they are marked as favorites. This filter is accessible via a toggle button at the header of each sport.<br>
 [x] Real-time countdown timer updates, decrementing as time passes to accurately reflect the time remaining until the event starts.<br>
 [x] Persist the favorite status of each event across app launches using Android's SharedPreferences.<br>
+[x] Allow users to collapse and expand events per sport.<br>
+[x] Display appropriate messages if there are no events to display or if there is an error fetching the events from the API endpoint.<br>
 ## Future Improvements
 
 - Implement a more robust error handling mechanism to handle network errors, timeouts, and other exceptions.

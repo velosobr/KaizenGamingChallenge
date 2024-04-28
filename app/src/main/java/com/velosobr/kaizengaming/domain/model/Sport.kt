@@ -17,5 +17,7 @@ data class Sport(
     /**
      * Active events
      */
-    val e: List<Event>
+    val e: List<Event>,
+    var isExpanded: Boolean = true
+
 )

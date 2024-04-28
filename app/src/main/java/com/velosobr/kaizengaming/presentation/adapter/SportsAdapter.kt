@@ -24,23 +24,22 @@ class SportAdapter(private val sports: MutableList<Sport>) :
 
     override fun getItemCount() = sports.size
 
-    fun updateSports(newSports: List<Sport>) {
-        sports.clear()
-        sports.addAll(newSports)
-        notifyDataSetChanged()
-    }
-
     class SportViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemSportBinding.bind(itemView)
 
-
         fun bind(sport: Sport) {
             binding.tvSportName.text = sport.d
-            val eventAdapter = EventAdapter(sport.e, itemView.context)
             binding.rvEvents.layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
-            binding.rvEvents.adapter = eventAdapter
-            binding.toggleFavorite.setOnClickListener {
-                eventAdapter.filterFavorites(binding.toggleFavorite.isChecked)
+            binding.rvEvents.adapter = EventAdapter(sport.e, itemView.context)
+
+            binding.ivExpandCollapse.setOnClickListener {
+                if (binding.rvEvents.visibility == View.VISIBLE) {
+                    binding.rvEvents.visibility = View.GONE
+                    binding.ivExpandCollapse.setImageResource(R.drawable.baseline_arrow_drop_up_24)
+                } else {
+                    binding.rvEvents.visibility = View.VISIBLE
+                    binding.ivExpandCollapse.setImageResource(R.drawable.outline_arrow_drop_down_24)
+                }
             }
         }
     }
