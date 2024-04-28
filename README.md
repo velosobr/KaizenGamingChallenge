@@ -55,7 +55,7 @@ as time passes and should accurately reflect the time remaining until the event 
 ● The app should display an appropriate message if there are no events to display or if
 there is an error fetching the events from the API endpoint.<br>
 ● The app should allow user to be able to collapse and expand events per sport.<br>
-● Expected deliverable is an Android project that can be built and run both in an emulator
+`OK` Expected deliverable is an Android project that can be built and run both in an emulator
 as well as a physical device and should work on SDK21 and above.<br>
 
 ## Nice to have 👍
