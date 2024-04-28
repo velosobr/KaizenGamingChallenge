@@ -47,11 +47,9 @@ Please note that you need to have the Android SDK and Android SDK Tools installe
 `OK` The app should display the list of events in a scrollable list that groups the sport events
 by type, displays the competitors, the countdown timer that indicates when the event is
 scheduled to start and a favorite button.<br>
-
 `NOT WORKING` The app should allow users to filter the events per sport based on if they are added as
 favorites or not. The filter should be accessible via a toggle button at the header of each
 sport.<br>
-
 `OK` The app should update the countdown timer in real-time, i.e., the timer should decrement
 as time passes and should accurately reflect the time remaining until the event starts.<br>
 ● The app should display an appropriate message if there are no events to display or if
@@ -61,7 +59,7 @@ there is an error fetching the events from the API endpoint.<br>
 as well as a physical device and should work on SDK21 and above.<br>
 
 ## Nice to have 👍
-`OK`  The app could store the favorite events in session or a local database.
+`OK`  The app could store the favorite events in session or a local database.<br>
 ● The app could include unit tests to ensure that the filtering and countdown timer
 functionality work correctly.<br>
 ● The app could include UI tests to ensure that the app's UI looks and behaves correctly
