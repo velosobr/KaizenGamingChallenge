@@ -1,8 +1,6 @@
 package com.velosobr.kaizengaming.presentation.adapter
 
 import android.content.Context
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
