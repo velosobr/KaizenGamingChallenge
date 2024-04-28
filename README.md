@@ -70,12 +70,12 @@ mentioning.<br>
 
 ## Features
 
-[x] Fetch and display a list of sports events from an API endpoint.
-[x] Group events by sport type and display them in a scrollable list.
-[x] Display each event entry with the competitors, a countdown timer indicating when the event is scheduled to start, and a favorite button.
-[ ] Allow users to filter the events per sport based on whether they are marked as favorites. This filter is accessible via a toggle button at the header of each sport.
-[x] Real-time countdown timer updates, decrementing as time passes to accurately reflect the time remaining until the event starts.
-[x] Persist the favorite status of each event across app launches using Android's SharedPreferences.
+[x] Fetch and display a list of sports events from an API endpoint.<br>
+[x] Group events by sport type and display them in a scrollable list.<br>
+[x] Display each event entry with the competitors, a countdown timer indicating when the event is scheduled to start, and a favorite button.<br>
+[ ] Allow users to filter the events per sport based on whether they are marked as favorites. This filter is accessible via a toggle button at the header of each sport.<br>
+[x] Real-time countdown timer updates, decrementing as time passes to accurately reflect the time remaining until the event starts.<br>
+[x] Persist the favorite status of each event across app launches using Android's SharedPreferences.<br>
 ## Future Improvements
 
 - Implement a more robust error handling mechanism to handle network errors, timeouts, and other exceptions.
