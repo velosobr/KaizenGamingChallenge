@@ -1,8 +1,18 @@
 # KAIZEN GAMING - ANDROID INTERVIEW PROJECT
 
-## App Demo
+<table>
+  <tr>
+    <td align="center">
+      App Demo GIF
+    </td>
+  </tr>
+<tr>
+    <td>
+      <img src="Screen_Recording_20240428_195214_Kaizen-Gaming.gif" alt="App Demo" width="50%"/>
+    </td>
+  </tr>
+</table>
 
-<img src="Screen_Recording_20240428_195214_Kaizen-Gaming.gif" width="50%" height="50%" />
 ## Introduction
 
 This project is an Android application developed primarily in Kotlin. It is designed to fetch and display a list of sports events from an API endpoint. 
