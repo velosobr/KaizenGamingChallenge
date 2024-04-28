@@ -43,30 +43,32 @@ git clone https://github.com/velosobr/KaizenGamingChallenge.git
 Please note that you need to have the Android SDK and Android SDK Tools installed. These can be installed through the SDK Manager in Android Studio.
 
 ## Requirements : 📄
-`OK` The app should fetch the list of events from an API endpoint.
+`OK` The app should fetch the list of events from an API endpoint.<br>
 `OK` The app should display the list of events in a scrollable list that groups the sport events
 by type, displays the competitors, the countdown timer that indicates when the event is
-scheduled to start and a favorite button.
+scheduled to start and a favorite button.<br>
+
 `NOT WORKING` The app should allow users to filter the events per sport based on if they are added as
 favorites or not. The filter should be accessible via a toggle button at the header of each
-sport.
+sport.<br>
+
 `OK` The app should update the countdown timer in real-time, i.e., the timer should decrement
-as time passes and should accurately reflect the time remaining until the event starts.
+as time passes and should accurately reflect the time remaining until the event starts.<br>
 ● The app should display an appropriate message if there are no events to display or if
-there is an error fetching the events from the API endpoint.
-● The app should allow user to be able to collapse and expand events per sport.
+there is an error fetching the events from the API endpoint.<br>
+● The app should allow user to be able to collapse and expand events per sport.<br>
 ● Expected deliverable is an Android project that can be built and run both in an emulator
-as well as a physical device and should work on SDK21 and above.
+as well as a physical device and should work on SDK21 and above.<br>
 
 ## Nice to have 👍
 `OK`  The app could store the favorite events in session or a local database.
 ● The app could include unit tests to ensure that the filtering and countdown timer
-functionality work correctly.
+functionality work correctly.<br>
 ● The app could include UI tests to ensure that the app's UI looks and behaves correctly
-on different devices and screen sizes.
+on different devices and screen sizes.<br>
 `OK` The project could contain a README file with some insights and information about the
 project structure, technologies used and anything else you think that is worth
-mentioning.
+mentioning.<br>
 
 ## Features
 
