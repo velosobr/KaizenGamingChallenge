@@ -22,8 +22,19 @@ class EventAdapter(
 ) :
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
-    private val sharedPreferences = context.getSharedPreferences("favorites", Context.MODE_PRIVATE)
-
+    private val sharedPreferences = context.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+    private var displayedEvents = events.toMutableList()
+    fun filterFavorites(showFavorites: Boolean) {
+        val favorites = sharedPreferences.getStringSet("favorites", mutableSetOf()) ?: mutableSetOf()
+        Log.d("EventAdapter", "Favorites from SharedPreferences: $favorites")
+        displayedEvents = if (showFavorites) {
+            events.filter { favorites.contains(it.i) }.toMutableList()
+        } else {
+            events.toMutableList()
+        }
+        Log.d("EventAdapter", "Displayed events after filter: $displayedEvents")
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_sport_event, parent, false)
@@ -91,6 +102,7 @@ class EventAdapter(
             putStringSet("favorites", favorites)
             apply()
         }
+        Log.d("EventAdapter", "Favorites after update: $favorites")
 
         val index = events.indexOf(event)
         if (index != -1) {

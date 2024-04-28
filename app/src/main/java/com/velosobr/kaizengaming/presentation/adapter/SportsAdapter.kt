@@ -33,10 +33,15 @@ class SportAdapter(private val sports: MutableList<Sport>) :
     class SportViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemSportBinding.bind(itemView)
 
+
         fun bind(sport: Sport) {
             binding.tvSportName.text = sport.d
+            val eventAdapter = EventAdapter(sport.e, itemView.context)
             binding.rvEvents.layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
-            binding.rvEvents.adapter = EventAdapter(sport.e, itemView.context)
+            binding.rvEvents.adapter = eventAdapter
+            binding.toggleFavorite.setOnClickListener {
+                eventAdapter.filterFavorites(binding.toggleFavorite.isChecked)
+            }
         }
     }
 }
