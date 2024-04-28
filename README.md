@@ -89,5 +89,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any queries or suggestions, you can reach out to me:
 
 - Name: Lino Veloso
-- Email: linoc.veloso@mgial.com
+- Email: linoc.veloso@gmail.com
 - GitHub: [velosobr](https://github.com/velosobr)
