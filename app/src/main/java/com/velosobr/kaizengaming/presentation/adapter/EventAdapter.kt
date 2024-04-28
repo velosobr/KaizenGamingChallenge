@@ -23,8 +23,6 @@ class EventAdapter(
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     private val sharedPreferences = context.getSharedPreferences("favorites", Context.MODE_PRIVATE)
-    private val handler = Handler(Looper.getMainLooper())
-    private lateinit var runnable: Runnable
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val view =
@@ -77,15 +75,6 @@ class EventAdapter(
                 Log.d("EventAdapter", "Event ${event.i} is not marked as favorite")
             }
         }
-    }
-
-    override fun onViewRecycled(holder: EventViewHolder) {
-        handler.removeCallbacks(runnable)
-        super.onViewRecycled(holder)
-    }
-    override fun onDetachedFromRecyclerView(recyclerView: RecyclerView) {
-        handler.removeCallbacks(runnable)
-        super.onDetachedFromRecyclerView(recyclerView)
     }
 
     private fun updateFavorites(event: Event) {
