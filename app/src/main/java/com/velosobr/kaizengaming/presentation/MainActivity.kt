@@ -1,9 +1,11 @@
 package com.velosobr.kaizengaming.presentation
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.Window
+import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        setFullScreen()
 
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -42,13 +44,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-    private fun showLoadingState() {
-        with(binding){
-            includeViewShimmerSportState.shimmerSportItems.visibility = View.VISIBLE
-            rvSports.visibility = View.GONE
-            tvMessage.visibility = View.GONE
-            buttonRetry.visibility = View.GONE
+    private fun setFullScreen() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            @Suppress("DEPRECATION")
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
         }
     }
 
@@ -81,6 +85,15 @@ class MainActivity : AppCompatActivity() {
             buttonRetry.setOnClickListener {
                 sportsViewModel.fetchSports()
             }
+        }
+    }
+
+    private fun showLoadingState() {
+        with(binding){
+            includeViewShimmerSportState.shimmerSportItems.visibility = View.VISIBLE
+            rvSports.visibility = View.GONE
+            tvMessage.visibility = View.GONE
+            buttonRetry.visibility = View.GONE
         }
     }
 }
